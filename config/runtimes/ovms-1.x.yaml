@@ -45,6 +45,7 @@ spec:
         # bind to localhost only to constrain requests to containers in the pod
         - --grpc_bind_address=127.0.0.1
         - --rest_bind_address=127.0.0.1
+        - --metrics_enable
       resources:
         requests:
           cpu: 500m
