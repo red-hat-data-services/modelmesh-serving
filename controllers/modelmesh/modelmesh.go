@@ -47,6 +47,7 @@ type Deployment struct {
 	Metrics            bool
 	PrometheusPort     uint16
 	PrometheusScheme   string
+	PayloadProcessors   string
 	ModelMeshImage     string
 	ModelMeshResources *corev1.ResourceRequirements
 	RESTProxyEnabled   bool
