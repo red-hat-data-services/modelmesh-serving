@@ -75,7 +75,7 @@ type Config struct {
 	StorageSecretName      string
 	EnableAccessLogging    bool
 	BuiltInServerTypes     []string
-	PayloadProcessors 	   string
+	PayloadProcessors      string
 
 	ServiceAccountName string
 
