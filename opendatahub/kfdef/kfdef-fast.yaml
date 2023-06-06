@@ -1,0 +1,37 @@
+apiVersion: kfdef.apps.kubeflow.org/v1
+kind: KfDef
+metadata:
+  name: opendatahub
+  namespace: %controller-namespace%
+spec:
+  applications:
+    - kustomizeConfig:
+        repoRef:
+          name: odh-manifests
+          path: odh-common
+      name: odh-common
+    - kustomizeConfig:
+        parameters:
+          - name: odh-mm-rest-proxy
+            value: quay.io/opendatahub/rest-proxy:fast
+          - name: odh-modelmesh-runtime-adapter
+            value: quay.io/opendatahub/modelmesh-runtime-adapter:fast
+          - name: odh-modelmesh
+            value: quay.io/opendatahub/modelmesh:fast
+          - name: odh-modelmesh-controller
+            value: quay.io/opendatahub/modelmesh-controller:fast
+          - name: odh-model-controller
+            value: quay.io/opendatahub/odh-model-controller:fast
+          - name: monitoring-namespace
+            value: %controller-namespace%
+        repoRef:
+          name: manifests
+          path: opendatahub/odh-manifests/model-mesh
+      name: model-mesh
+  repos:
+    - name: odh-manifests
+      uri: https://api.github.com/repos/opendatahub-io/odh-manifests/tarball/master
+    - name: manifests
+      uri: https://api.github.com/repos/%mm_user%/modelmesh-serving/tarball/%mm_branch%
+      # uri: https://api.github.com/repos/Jooho/modelmesh-serving/tarball/restructed_odh_manifests
+  version: master
