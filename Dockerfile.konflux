@@ -1,5 +1,5 @@
 #go-toolset:1.21
-FROM registry.redhat.io/ubi9/go-toolset:1.21@sha256:d73c4151518c73332717a52f5d22c670bf2f88e04a841e507aef0227b3100225 AS build
+FROM registry.redhat.io/ubi9/go-toolset:9.5@sha256:35bd2c84f79cd1dd944995af849725825efb46189328d795b5540451a20f8291 AS build
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
