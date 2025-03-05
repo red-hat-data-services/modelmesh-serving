@@ -35,7 +35,7 @@ spec:
     mountPath: /artifacts
   steps:
     - name: run-setup-script
-      image: docker.io/aipipeline/pipeline-base-image:1.2
+      image: docker.io/aipipeline/pipeline-base-image:1.5
       env:
         - name: DOCKER_USERNAME
           value: $(params.docker-username)
@@ -122,7 +122,7 @@ spec:
     mountPath: /artifacts
   steps:
     - name: process-image
-      image: docker.io/aipipeline/pipeline-base-image:1.2
+      image: docker.io/aipipeline/pipeline-base-image:1.5
       env:
         - name: DOCKER_USERNAME
           value: $(params.docker-username)
@@ -243,7 +243,7 @@ spec:
     mountPath: /artifacts
   steps:
     - name: deploy-modelmesh-serving
-      image: docker.io/aipipeline/pipeline-base-image:1.2
+      image: docker.io/aipipeline/pipeline-base-image:1.5
       env:
         - name: DOCKER_USERNAME
           value: $(params.docker-username)
@@ -295,7 +295,7 @@ spec:
     mountPath: /artifacts
   steps:
     - name: run-test
-      image: docker.io/aipipeline/pipeline-base-image:1.2
+      image: docker.io/aipipeline/pipeline-base-image:1.5
       env:
         - name: IBM_CLOUD_API_KEY
           value: $(params.apikey)
@@ -347,7 +347,7 @@ spec:
     mountPath: /artifacts
   steps:
     - name: run-performance-test
-      image: docker.io/aipipeline/pipeline-base-image:1.2
+      image: docker.io/aipipeline/pipeline-base-image:1.5
       env:
         - name: SERVING_KUBERNETES_CLUSTER_NAME
           value: $(params.kubernetes-cluster)
@@ -384,7 +384,7 @@ spec:
     mountPath: /artifacts
   steps:
     - name: undeploy-modelmesh-serving
-      image: docker.io/aipipeline/pipeline-base-image:1.2
+      image: docker.io/aipipeline/pipeline-base-image:1.5
       env:
         - name: SERVING_KUBERNETES_CLUSTER_NAME
           value: $(params.kubernetes-cluster)
@@ -433,7 +433,7 @@ spec:
     mountPath: /artifacts
   steps:
     - name: run-cleanup-script
-      image: docker.io/aipipeline/pipeline-base-image:1.2
+      image: docker.io/aipipeline/pipeline-base-image:1.5
       env:
         - name: IBM_CLOUD_API_KEY
           value: $(params.apikey)
