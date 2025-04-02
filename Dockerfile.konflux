@@ -1,5 +1,7 @@
-#go-toolset:1.21
-FROM registry.redhat.io/ubi9/go-toolset:1.21@sha256:d73c4151518c73332717a52f5d22c670bf2f88e04a841e507aef0227b3100225 AS build
+###############################################################################
+# Stage 1: Build assets
+###############################################################################
+FROM registry.redhat.io/ubi9/go-toolset:1.22.9@sha256:6402ad7886fb3bdaa950c89bdf338f8dbedde54c16bddb1157ebb8691b2def50 AS build
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
