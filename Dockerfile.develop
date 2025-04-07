@@ -45,7 +45,7 @@ WORKDIR /workspace
 # Install build and dev tools
 # NOTE: Require python to install pre-commit
 RUN --mount=type=cache,target=/root/.cache/dnf:rw \
-    microdnf install --setopt=cachedir=/root/.cache/dnf -y --nodocs \
+    dnf install --setopt=cachedir=/root/.cache/dnf -y --nodocs \
        nodejs \
        jq \
        python3.11 \
