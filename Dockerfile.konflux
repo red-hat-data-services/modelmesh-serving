@@ -1,7 +1,7 @@
 ###############################################################################
 # Stage 1: Build assets
 ###############################################################################
-FROM registry.redhat.io/ubi9/go-toolset:1.22.9@sha256:e4193e71ea9f2e2504f6b4ee93cadef0fe5d7b37bba57484f4d4229801a7c063 AS build
+FROM registry.access.redhat.com/ubi9/go-toolset:1.22.9@sha256:e4193e71ea9f2e2504f6b4ee93cadef0fe5d7b37bba57484f4d4229801a7c063 AS build
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
@@ -25,15 +25,15 @@ RUN go mod download
 # Build using native go compiler from BUILDPLATFORM but compiled output for TARGETPLATFORM
 RUN GOOS=${TARGETOS:-linux} \
     GOARCH=${TARGETARCH:-amd64} \
-    CGO_ENABLED=0 \
+    CGO_ENABLED=1 \
     GO111MODULE=on \
-    go build -a -o /workspace/manager main.go
+    GOEXPERIMENT=strictfipsruntime    go build -tags strictfipsruntime -a -o /workspace/manager main.go
 
 ###############################################################################
 # Stage 2: Copy build assets to create the smallest final runtime image
 ###############################################################################
 #ubi-minimal:latest
-FROM registry.redhat.io/ubi8/ubi-minimal@sha256:33161cf5ec11ea13bfe60cad64f56a3aa4d893852e8ec44b2fd2a6b40cc38539 AS runtime
+FROM registry.access.redhat.com/ubi9/ubi-minimal@sha256:ac61c96b93894b9169221e87718733354dd3765dd4a62b275893c7ff0d876869 AS runtime
 
 ARG USER=2000
 ARG IMAGE_VERSION
