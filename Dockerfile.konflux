@@ -49,11 +49,6 @@ LABEL com.redhat.component="odh-modelmesh-serving-controller-container" \
       io.k8s.description="modelmesh-serving-controller" \
       com.redhat.license_terms="https://www.redhat.com/licenses/Red_Hat_Standard_EULA_20191108.pdf"
 
-
-## Install additional packages
-RUN microdnf install -y shadow-utils &&\
-    microdnf clean all
-
 USER ${USER}
 
 WORKDIR /
