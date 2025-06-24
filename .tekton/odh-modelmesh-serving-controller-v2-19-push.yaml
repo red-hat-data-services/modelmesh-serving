@@ -41,7 +41,7 @@ spec:
     value: true
   - name: prefetch-input
     Value: |
-      [{"type": "gomod"}, {"type": "rpm"}]
+      [{"type": "gomod"}, {"type": "rpm", "path": "."}]
   - name: build-source-image
     value: true
   - name: build-image-index
