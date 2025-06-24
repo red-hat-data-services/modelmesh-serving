@@ -40,8 +40,8 @@ spec:
   - name: hermetic
     value: true
   - name: prefetch-input
-    value: |
-      [{"type": "gomod"}]
+    Value: |
+      [{"type": "gomod"}, {"type": "rpm"}]
   - name: build-source-image
     value: true
   - name: build-image-index
