@@ -29,7 +29,7 @@ spec:
     - '{{target_branch}}-{{revision}}'
   - name: additional-labels
     value:
-    - version=v2.19.1
+    - version=v2.19.2
     - io.openshift.tags=odh-modelmesh-serving-controller
   - name: output-image
     value: quay.io/rhoai/odh-modelmesh-serving-controller-rhel8:{{target_branch}}
@@ -41,7 +41,7 @@ spec:
     value: true
   - name: prefetch-input
     value: |
-      [{"type": "gomod"}, {"type": "rpm"}]
+      [{"type": "gomod"}]
   - name: build-source-image
     value: true
   - name: build-image-index
