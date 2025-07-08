@@ -1,6 +1,6 @@
 module github.com/kserve/modelmesh-serving
 
-go 1.21
+go 1.21.3
 
 require (
 	github.com/dereklstinson/cifar v0.0.0-20200421171932-5722a3b6a0c7
@@ -25,7 +25,7 @@ require (
 	google.golang.org/grpc v1.59.0
 	google.golang.org/protobuf v1.33.0
 	k8s.io/api v0.28.4
-	k8s.io/apimachinery v0.28.4
+	k8s.io/apimachinery v0.29.0-alpha.3
 	k8s.io/client-go v0.28.4
 	knative.dev/pkg v0.0.0-20231115001034-97c7258e3a98
 	sigs.k8s.io/controller-runtime v0.16.3
