@@ -25,7 +25,7 @@ require (
 	google.golang.org/grpc v1.58.3
 	google.golang.org/protobuf v1.31.0
 	k8s.io/api v0.27.6
-	k8s.io/apimachinery v0.27.6
+	k8s.io/apimachinery v0.29.0-alpha.3
 	k8s.io/client-go v0.27.6
 	knative.dev/pkg v0.0.0-20231023151236-29775d7c9e5c
 	sigs.k8s.io/controller-runtime v0.14.6
