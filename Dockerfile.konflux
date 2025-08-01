@@ -33,7 +33,7 @@ RUN GOOS=${TARGETOS:-linux} \
 # Stage 2: Copy build assets to create the smallest final runtime image
 ###############################################################################
 #ubi-minimal:latest
-FROM registry.access.redhat.com/ubi9/ubi-minimal@sha256:67fee1a132e8e326434214b3c7ce90b2500b2ad02c9790cc61581feb58d281d5 AS runtime
+FROM registry.access.redhat.com/ubi9/ubi-minimal@sha256:0d7cfb0704f6d389942150a01a20cb182dc8ca872004ebf19010e2b622818926 AS runtime
 
 ARG USER=2000
 ARG IMAGE_VERSION
