@@ -38,7 +38,8 @@ ARG IMAGE_VERSION
 ARG COMMIT_SHA
 
 LABEL com.redhat.component="odh-modelmesh-serving-controller-container" \
-      name="managed-open-data-hub/odh-modelmesh-serving-controller-rhel8" \
+      name="rhoai/odh-modelmesh-serving-controller-rhel8" \
+      cpe="cpe:/a:redhat:openshift_ai:2.19::el8" \
       description="Manages lifecycle of ModelMesh Serving Custom Resources and associated Kubernetes resources" \
       summary="odh-modelmesh-serving-controller" \
       maintainer="['managed-open-data-hub@redhat.com']" \
