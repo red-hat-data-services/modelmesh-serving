@@ -1,6 +1,6 @@
 #go-toolset:1.25.5-1769430014
 
-FROM registry.redhat.io/ubi9/go-toolset:1.25.5@sha256:359dd4c6c4255b3f7bce4dc15ffa5a9aa65a401f819048466fa91baa8244a793 AS build
+FROM registry.redhat.io/ubi9/go-toolset:1.25.5@sha256:6983c6e7023236d1b5093c75c94402c7bdfd43c36ed9c34f2feda72a0ea7c8b1 AS build
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
@@ -32,7 +32,7 @@ RUN GOOS=${TARGETOS:-linux} \
 # Stage 2: Copy build assets to create the smallest final runtime image
 ###############################################################################
 #ubi-minimal:latest
-FROM registry.redhat.io/ubi8/ubi-minimal@sha256:000dd8e4a3046ac7c47e65bbe01efc48d7a568e5ee9946cca1d74a7abf042d36 AS runtime
+FROM registry.redhat.io/ubi8/ubi-minimal@sha256:de46044c1c8d595193316655c441f196cf885bda9fb97244679b458327c19142 AS runtime
 
 ARG USER=2000
 ARG IMAGE_VERSION
