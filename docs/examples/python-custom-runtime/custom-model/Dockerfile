@@ -1,4 +1,4 @@
-FROM python:3.9.13
+FROM python:3.14.0
 # ENV LANG C.UTF-8
 
 COPY requirements.txt ./requirements.txt
