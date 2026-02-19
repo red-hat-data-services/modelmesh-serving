@@ -21,7 +21,7 @@
 ###############################################################################
 # Create the develop, test, and build environment
 ###############################################################################
-ARG GOLANG_VERSION=1.23
+ARG GOLANG_VERSION=1.25
 FROM registry.access.redhat.com/ubi9/go-toolset:$GOLANG_VERSION
 
 # https://docs.docker.com/engine/reference/builder/#automatic-platform-args-in-the-global-scope
@@ -56,7 +56,6 @@ RUN --mount=type=cache,target=/root/.cache/dnf:rw \
 
 # Install pre-commit
 ENV PIP_CACHE_DIR=/root/.cache/pip
-RUN python3 -m pip install --upgrade pip
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install pre-commit
 
@@ -123,9 +122,9 @@ RUN true \
     && true
 
 # Use setup-envtest for kubebuilder to use K8s version 1.23+ for autoscaling/v2 (HPA)
+# Note: Binaries are downloaded on-demand during test runs to avoid GCS auth issues during build
 RUN true \
     && go install sigs.k8s.io/controller-runtime/tools/setup-envtest@v0.0.0-20240320141353-395cfc7486e6 \
-    && setup-envtest use 1.26 \
     && true
 
 # For GitHub Action 'lint', work around error "detected dubious ownership in repository at '/workspace'"
