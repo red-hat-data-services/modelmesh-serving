@@ -29,13 +29,13 @@ IMG ?= kserve/modelmesh-controller:latest
 # Namespace to deploy model-serve into
 NAMESPACE ?= "model-serving"
 
-CONTROLLER_GEN_VERSION ?= "v0.11.4"
+CONTROLLER_GEN_VERSION ?= "v0.14.0"
 
 # Kubernetes version needs to be 1.23 or newer for autoscaling/v2 (HPA)
 # https://github.com/kubernetes-sigs/controller-runtime/tree/main/tools/setup-envtest
 # install with `go install sigs.k8s.io/controller-runtime/tools/setup-envtest@latest`
 # find available versions by running `setup-envtest list`
-KUBERNETES_VERSION ?= 1.26
+KUBERNETES_VERSION ?= 1.28
 
 CRD_OPTIONS ?= "crd:maxDescLen=0"
 
